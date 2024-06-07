@@ -72,7 +72,6 @@ submit = SparkKubernetesOperator(
     kubernetes_conn_id="kubernetes_in_cluster",
     do_xcom_push=True,
     dag=dag,
-    api_group="sparkoperator.hpe.com",
     enable_impersonation_from_ldap_user=True
 )
 
