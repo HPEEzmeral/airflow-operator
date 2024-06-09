@@ -90,18 +90,6 @@ rules:
   - patch
   - delete
 - apiGroups:
-  - policy
-  resources:
-  - poddisruptionbudgets
-  verbs:
-  - get
-  - list
-  - watch
-  - create
-  - update
-  - patch
-  - delete
-- apiGroups:
   - rbac.authorization.k8s.io
   resources:
   - rolebindings

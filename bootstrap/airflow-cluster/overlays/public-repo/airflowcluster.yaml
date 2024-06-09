@@ -25,10 +25,10 @@ spec:
     resources:
       limits:
         cpu: 1450m
-        memory: 1950Mi
+        memory: 3500Mi
       requests:
         cpu: 975m
-        memory: 1475Mi
+        memory: 2000Mi
   scheduler:
     version: $(AIRFLOW_CLUSTER_IMAGE_TAG)
     resources:
