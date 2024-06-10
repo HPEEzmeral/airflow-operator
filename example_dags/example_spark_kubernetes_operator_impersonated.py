@@ -70,7 +70,8 @@ submit = SparkKubernetesOperator(
     namespace=current_namespace,
     application_file="example_spark_kubernetes_operator_pi_impersonated.yaml",
     kubernetes_conn_id="kubernetes_in_cluster",
-    do_xcom_push=True,
+    do_xcom_push=False,
+    get_logs=False,
     dag=dag,
     enable_impersonation_from_ldap_user=True
 )
@@ -78,7 +79,7 @@ submit = SparkKubernetesOperator(
 sensor = SparkKubernetesSensor(
     task_id='spark_pi_monitor_impersonated',
     namespace=current_namespace,
-    application_name="{{ task_instance.xcom_pull(task_ids='spark_pi_submit')['metadata']['name'] }}",
+    application_name="{{ task_instance.xcom_pull(task_ids='spark_pi_submit')['pod_name'].removesuffix('-driver') }}",
     kubernetes_conn_id="kubernetes_in_cluster",
     dag=dag,
     api_group="sparkoperator.hpe.com",
