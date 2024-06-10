@@ -13,6 +13,9 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+SCRIPT_DIR=$(cd -- "$(dirname -- "${SCRIPT}")" &> /dev/null && pwd)
+export PATH="$SCRIPT_DIR/../bin:$PATH"
+
 AIRFLOW_IMAGE_TAG__CURRENT_VALUE="ecp-5.6.5-rc1"
 
 if [ $AIRFLOW_UPGRADE_TO_CURRENT_VERSION = "true" ]; then

@@ -13,6 +13,9 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+SCRIPT_DIR=$(cd -- "$(dirname -- "${SCRIPT}")" &> /dev/null && pwd)
+export PATH="$SCRIPT_DIR/../bin:$PATH"
+
 if [ -z "$AIRFLOW_GIT_REPO_URL" ]; then
     echo -n "Error during installation of AirflowCluster: AIRFLOW_GIT_REPO_URL was empty, "
     echo "expected URL of git repository"

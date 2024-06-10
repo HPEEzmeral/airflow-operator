@@ -13,6 +13,9 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+SCRIPT_DIR=$(cd -- "$(dirname -- "${SCRIPT}")" &> /dev/null && pwd)
+export PATH="$SCRIPT_DIR/../bin:$PATH"
+
 if [ -z "$AIRFLOW_CLUSTER_IMAGE_TAG" ]; then
     echo -n "Error during upgrade of Airflow Cluster: AIRFLOW_CLUSTER_IMAGE_TAG was empty, "
     echo "expected new tag for airflow image"

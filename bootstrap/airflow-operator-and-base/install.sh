@@ -13,6 +13,9 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+SCRIPT_DIR=$(cd -- "$(dirname -- "${SCRIPT}")" &> /dev/null && pwd)
+export PATH="$SCRIPT_DIR/../bin:$PATH"
+
 AIRGAP_REGISTRY__DEFAULT_VALUE=""
 AIRFLOW_OPERATOR_NAMESPACE__DEFAULT_VALUE="airflowop-system"
 AIRFLOW_OPERATOR_IMAGE_TAG__DEFAULT_VALUE="ecp-5.6.5-rc1"
