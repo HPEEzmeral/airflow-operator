@@ -75,6 +75,7 @@ submit = SparkKubernetesOperator(
     kubernetes_conn_id="kubernetes_in_cluster",
     do_xcom_push=False,
     get_logs=True,
+    delete_on_termination=False,
     dag=dag,
     enable_impersonation_from_ldap_user=False
 )
