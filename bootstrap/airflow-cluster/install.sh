@@ -13,7 +13,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-SCRIPT_DIR=$(cd -- "$(dirname -- "${SCRIPT}")" &> /dev/null && pwd)
+SCRIPT_DIR=$(cd -- "$(dirname -- "$0")" &> /dev/null && pwd)
 export PATH="$SCRIPT_DIR/../bin:$PATH"
 
 if [ -z "$AIRFLOW_GIT_REPO_URL" ]; then
